@@ -3,3 +3,4 @@ data/
 baseline.py
 .idea/
 model/
+logs/
