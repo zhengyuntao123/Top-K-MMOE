@@ -1,6 +1,8 @@
 .ipynb_checkpoints/
 data/
-baseline.py
+*.py
 .idea/
 model/
 logs/
+data_processing.ipynb
+baseline.ipynb
