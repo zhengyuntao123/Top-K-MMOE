@@ -1,10 +1,8 @@
 .ipynb_checkpoints/
 data/
-baseline.py
-baseline-kdd-exp1.py
+*.py
 *.pyc
 .idea/
 model/
 logs/
 data_processing.ipynb
-topk-kdd-exp1.py

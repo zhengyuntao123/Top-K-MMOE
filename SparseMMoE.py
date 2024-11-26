@@ -4,8 +4,6 @@
 import torch
 import torch.nn as nn
 from torch.distributions.normal import Normal
-import numpy as np
-import global_vars
 
 class Expert(nn.Module):
     def __init__(self, input_dim, output_dim, expert_dropout):  # input_dim代表输入维度，output_dim代表输出维度
@@ -181,7 +179,7 @@ class SparseMMoE(nn.Module):
             # 记录每个batch内第一个样本的门网络的输出
             for i in range(self.n_task):
                 for j in range(self.num_experts):
-                    global_vars.writer.add_scalar(f"task_{i}/expert_{j}_weight", gates[0][j], global_vars.tot_iters)
+                    writer.add_scalar(f"task_{i}/expert_{j}_weight", gates[0][j], tot_iters)
 
             # calculate importance loss
             importance = gates.sum(0)
