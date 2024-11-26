@@ -7,5 +7,4 @@ baseline-kdd-exp1.py
 model/
 logs/
 data_processing.ipynb
-baseline.ipynb
 topk-kdd-exp1.py
