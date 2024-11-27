@@ -6,3 +6,4 @@ data/
 model/
 logs/
 data_processing.ipynb
+test.ipynb
