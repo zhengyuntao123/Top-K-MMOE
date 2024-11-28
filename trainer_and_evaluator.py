@@ -100,6 +100,7 @@ def eval_TopkMMoE(mybestmodel, test_dataset):
     y2_pred = y2_pred.squeeze(1).detach().cpu().numpy()
     auc1 = get_auc(test_dataset.y1, y1_pred)
     auc2 = get_auc(test_dataset.y2, y2_pred)
+    wandb.log({"task1_AUC": auc1, "task2_AUC": auc2})
     return auc1, auc2
 
 def train_MMoE(mymodel, train_dataset, val_dataset, bestmodel_save_dir, lr, N_epochs, batch_size):
@@ -186,4 +187,5 @@ def eval_MMoE(mybestmodel, test_dataset):
     y2_pred = y2_pred.squeeze(1).detach().cpu().numpy()
     auc1 = get_auc(test_dataset.y1, y1_pred)
     auc2 = get_auc(test_dataset.y2, y2_pred)
+    wandb.log({"task1_AUC": auc1, "task2_AUC": auc2})
     return auc1, auc2
