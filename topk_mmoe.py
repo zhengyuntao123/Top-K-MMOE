@@ -207,9 +207,14 @@ class SparseMMoE(nn.Module):
         outputs = []
         for i in range(self.n_task):
             gates, load, task_router_z_loss = self.noisy_top_k_gating(x, self.training, i)
+
+            # 沿着batch轴做平均
+            gates_mean=torch.mean(gates, dim=0)
+            # 记录每个batch内各expert的平均门网络的输出的方差
+            wandb.log({f"task_{i}/expert_weight_variance": torch.var(gates_mean)})
             # 记录每个batch内各expert的平均门网络的输出
             for j in range(self.n_expert):
-                wandb.log({f"task_{i}/expert_{j}_weight": gates[:, j].mean()})
+                wandb.log({f"task_{i}/expert_{j}_weight": gates_mean[j]})
 
             importance = gates.sum(0)
 
