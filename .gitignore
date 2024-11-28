@@ -1,9 +1,9 @@
 .ipynb_checkpoints/
 data/
-*.py
 *.pyc
 .idea/
 model/
-logs/
 data_processing.ipynb
 test.ipynb
+wandb/
+__pycache__/
