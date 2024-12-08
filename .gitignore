@@ -7,8 +7,4 @@ data_processing.ipynb
 test.ipynb
 wandb/
 __pycache__/
-notebooks/topk_mmoe_dropout_0_exp1.ipynb
-notebooks/topk_mmoe_dropout_0.2_exp1.ipynb
-notebooks/topk_mmoe_dropout_0.4_exp1.ipynb
-notebooks/topk_mmoe_dropout_0.6_exp1.ipynb
-notebooks/topk_mmoe_dropout_0.8_exp1.ipynb
+my_own_exp/
